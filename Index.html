@@ -88,40 +88,6 @@
         .hidden {
             display: none; /* Oculta elementos con esta clase */
         }
-
-        /* Estilo para el chatbox */
-        #chatbox {
-            position: fixed; /* Fija el chatbox en la pantalla */
-            bottom: 20px; /* Espacio desde el fondo */
-            right: 20px; /* Espacio desde la derecha */
-            width: 350px; /* Ancho del chatbox */
-            height: 500px; /* Altura del chatbox */
-            border: 2px solid #ff0000; /* Borde rojo */
-            border-radius: 10px; /* Bordes redondeados */
-            overflow: hidden; /* Oculta contenido desbordado */
-            background-color: #fff; /* Fondo blanco */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra alrededor del chatbox */
-            z-index: 1000; /* Asegura que esté sobre otros elementos */
-            transition: transform 0.3s ease; /* Transición para el efecto de despliegue */
-        }
-
-        /* Estilo para el botón del chatbox */
-        #chatbox-button {
-            position: fixed; /* Fija el botón en la pantalla */
-            bottom: 20px; /* Espacio desde el fondo */
-            right: 20px; /* Espacio desde la derecha */
-            background-color: #ff7f00; /* Fondo naranja */
-            color: #fff; /* Texto blanco */
-            border: none; /* Sin borde */
-            border-radius: 50%; /* Botón redondo */
-            width: 50px; /* Ancho del botón */
-            height: 50px; /* Altura del botón */
-            text-align: center; /* Centra el texto */
-            line-height: 50px; /* Centra verticalmente el texto */
-            font-size: 24px; /* Tamaño del texto */
-            cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-            z-index: 1001; /* Asegura que esté sobre otros elementos */
-        }
     </style>
     <!-- Script para el chatbox de Botsonic -->
     <script>
@@ -206,21 +172,7 @@
             // Muestra la sección seleccionada
             document.getElementById(sectionId).classList.remove('hidden');
         }
-        
-        // Función para alternar la visibilidad del chatbox
-        function toggleChatbox() {
-            var chatbox = document.getElementById('chatbox');
-            chatbox.classList.toggle('hidden');
-        }
     </script>
-
-    <!-- Botón para desplegar/ocultar el chatbox -->
-    <button id="chatbox-button" onclick="toggleChatbox()">💬</button>
-
-    <!-- Chatbox Botsonic -->
-    <div id="chatbox">
-        <iframe src="https://widget.botsonic.com/CDN/index.html?service-base-url=https%3A%2F%2Fapi-azure.botsonic.ai&token=dcc6dc56-a2c7-41dc-976d-8e9a6f3cb572&base-origin=https%3A%2F%2Fbot.writesonic.com&instance-name=Botsonic&standalone=true&page-url=https%3A%2F%2Fchojunqa.github.io%2FIndex.html" frameborder="0"></iframe>
-    </div>
 
 </body>
 </html>
