@@ -4,82 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taekwondo Digital</title>
-    <!-- Enlaces a Bootstrap y estilos adicionales -->
+    <!-- Enlace a la hoja de estilos de Bootstrap para diseño responsivo -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        /* Estilo general del cuerpo de la página */
         body {
-            background-color: #111;
-            color: #fff;
-            font-family: 'Roboto', sans-serif;
+            background-color: #111; /* Fondo oscuro para contraste */
+            color: #fff; /* Texto en color blanco para visibilidad */
+            font-family: 'Roboto', sans-serif; /* Fuente de texto */
+            cursor: url('cinturon.png'), auto; /* Cambia el cursor a una imagen personalizada (cinturón de Taekwondo) */
         }
 
+        /* Estilo para la barra de navegación */
         .navbar {
-            background: linear-gradient(90deg, #ff0000, #ff7f00, #ffcc00);
+            background: linear-gradient(90deg, #ff0000, #ff7f00, #ffcc00); /* Gradiente de colores rojo, naranja y amarillo */
         }
 
+        /* Estilo para los enlaces de navegación */
         .navbar-brand, .nav-link {
-            color: #fff !important;
+            color: #fff !important; /* Color blanco para los enlaces */
         }
 
+        /* Estilo al pasar el ratón sobre los enlaces */
         .navbar-brand:hover, .nav-link:hover {
-            color: #ffcc00 !important;
+            color: #ffcc00 !important; /* Color amarillo para los enlaces cuando se pasa el ratón sobre ellos */
         }
 
+        /* Estilo para el encabezado */
         header {
-            text-align: center;
-            padding: 50px 0;
-            background: linear-gradient(90deg, #ff0000, #ff7f00, #ffcc00);
-            color: #111;
+            text-align: center; /* Centra el texto en el encabezado */
+            padding: 50px 0; /* Espacio arriba y abajo en el encabezado */
+            background: linear-gradient(90deg, #ff0000, #ff7f00, #ffcc00); /* Gradiente de colores para el fondo del encabezado */
+            color: #111; /* Color del texto en el encabezado */
+            position: relative; /* Necesario para posicionar el logo absoluto */
         }
 
+        /* Estilo para el título en el encabezado */
         header h1 {
-            font-size: 3rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 3rem; /* Tamaño grande para el título */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto para mejor legibilidad */
         }
 
+        /* Estilo para el logo en el encabezado */
+        header .logo {
+            position: absolute; /* Posiciona el logo en relación con el encabezado */
+            top: 50%; /* Centra verticalmente */
+            left: 20px; /* Posiciona el logo a la izquierda */
+            transform: translateY(-50%); /* Ajusta el logo para que quede centrado verticalmente */
+            height: 100px; /* Ajusta la altura del logo */
+        }
+
+        /* Estilo para el contenedor de las secciones */
         .container {
-            margin-top: 30px;
+            margin-top: 30px; /* Espacio superior para separar del encabezado */
         }
 
+        /* Estilo para los títulos de las secciones */
         .section-title {
-            color: #ffcc00;
-            border-bottom: 2px solid #ff7f00;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            color: #ffcc00; /* Color amarillo para los títulos */
+            border-bottom: 2px solid #ff7f00; /* Línea inferior naranja */
+            padding-bottom: 10px; /* Espacio debajo del título */
+            margin-bottom: 20px; /* Espacio debajo de la sección */
         }
 
+        /* Estilo para el iframe de la sección de Teoría en Audio */
         #teoria-en-audio iframe {
-            width: 100%;
-            height: 600px;
-            border: 2px solid #ff0000;
-            border-radius: 10px;
+            width: 100%; /* Ancho completo del contenedor */
+            height: 600px; /* Altura del iframe */
+            border: 2px solid #ff0000; /* Borde rojo alrededor del iframe */
+            border-radius: 10px; /* Bordes redondeados */
         }
 
+        /* Estilo para el pie de página */
         footer {
-            background-color: #222;
-            color: #ffcc00;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
+            background-color: #222; /* Fondo oscuro para el pie de página */
+            color: #ffcc00; /* Texto en color amarillo */
+            text-align: center; /* Centra el texto */
+            padding: 20px 0; /* Espacio arriba y abajo */
+            margin-top: 50px; /* Espacio superior para separar de la sección anterior */
         }
 
+        /* Estilo para ocultar secciones */
         .hidden {
-            display: none;
+            display: none; /* Oculta elementos con esta clase */
         }
 
         /* Estilo para el chatbox */
         #chatbox {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 350px;
-            height: 500px;
-            border: 2px solid #ff0000;
-            border-radius: 10px;
-            overflow: hidden;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
+            position: fixed; /* Fija el chatbox en la pantalla */
+            bottom: 20px; /* Espacio desde el fondo */
+            right: 20px; /* Espacio desde la derecha */
+            width: 350px; /* Ancho del chatbox */
+            height: 500px; /* Altura del chatbox */
+            border: 2px solid #ff0000; /* Borde rojo */
+            border-radius: 10px; /* Bordes redondeados */
+            overflow: hidden; /* Oculta contenido desbordado */
+            background-color: #fff; /* Fondo blanco */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra alrededor del chatbox */
+            z-index: 1000; /* Asegura que esté sobre otros elementos */
+            transition: transform 0.3s ease; /* Transición para el efecto de despliegue */
+        }
+
+        /* Estilo para el botón del chatbox */
+        #chatbox-button {
+            position: fixed; /* Fija el botón en la pantalla */
+            bottom: 20px; /* Espacio desde el fondo */
+            right: 20px; /* Espacio desde la derecha */
+            background-color: #ff7f00; /* Fondo naranja */
+            color: #fff; /* Texto blanco */
+            border: none; /* Sin borde */
+            border-radius: 50%; /* Botón redondo */
+            width: 50px; /* Ancho del botón */
+            height: 50px; /* Altura del botón */
+            text-align: center; /* Centra el texto */
+            line-height: 50px; /* Centra verticalmente el texto */
+            font-size: 24px; /* Tamaño del texto */
+            cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+            z-index: 1001; /* Asegura que esté sobre otros elementos */
         }
     </style>
     <!-- Script para el chatbox de Botsonic -->
@@ -105,23 +146,27 @@
 </head>
 <body>
 
+    <!-- Encabezado con el logo y el título -->
     <header>
-        <h1>Taekwondo Digital</h1>
+        <!-- Logo en el encabezado -->
+        <img src="logo.png" alt="Logo Taekwondo Digital" class="logo"> <!-- Asegúrate de reemplazar "logo.png" con la URL correcta del logo -->
+        <h1>Taekwondo Digital</h1> <!-- Título de la página -->
     </header>
 
+    <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Taekwondo Digital</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span> <!-- Icono del botón para pantallas pequeñas -->
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="showSection('home')">Home</a>
+                        <a class="nav-link" href="#" onclick="showSection('home')">Home</a> <!-- Enlace al inicio -->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="showSection('teoria-en-audio')">Teoría en Audio</a>
+                        <a class="nav-link" href="#" onclick="showSection('teoria-en-audio')">Teoría en Audio</a> <!-- Enlace a la sección de teoría en audio -->
                     </li>
                 </ul>
             </div>
@@ -129,34 +174,48 @@
     </nav>
 
     <div class="container">
+        <!-- Sección de inicio -->
         <section id="home">
             <h2 class="section-title">Bienvenido a Taekwondo Digital</h2>
             <p>Explora nuestra plataforma para mejorar tus conocimientos en Taekwondo.</p>
         </section>
 
+        <!-- Sección de teoría en audio -->
         <section id="teoria-en-audio" class="hidden">
             <h2 class="section-title">Teoría en Audio</h2>
             <p>Aquí puedes encontrar archivos PDF con la teoría en audio:</p>
-            <iframe src="https://drive.google.com/file/d/ID_DEL_ARCHIVO/preview"></iframe>
+            <!-- iFrame para mostrar el contenido del archivo PDF desde Google Drive -->
+            <iframe src="https://drive.google.com/file/d/ID_DEL_ARCHIVO/preview"></iframe> <!-- Asegúrate de reemplazar "ID_DEL_ARCHIVO" con el ID correcto del archivo PDF -->
         </section>
     </div>
 
+    <!-- Pie de página -->
     <footer>
         <p>&copy; 2024 Taekwondo Digital. Todos los derechos reservados. Propiedad de la escuela Chul Hak San</p>
     </footer>
 
-    <!-- Scripts de Bootstrap -->
+    <!-- Script para los componentes de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Función para mostrar secciones específicas
         function showSection(sectionId) {
-            // Ocultar todas las secciones
+            // Oculta todas las secciones
             document.getElementById('home').classList.add('hidden');
             document.getElementById('teoria-en-audio').classList.add('hidden');
 
-            // Mostrar la sección seleccionada
+            // Muestra la sección seleccionada
             document.getElementById(sectionId).classList.remove('hidden');
         }
+        
+        // Función para alternar la visibilidad del chatbox
+        function toggleChatbox() {
+            var chatbox = document.getElementById('chatbox');
+            chatbox.classList.toggle('hidden');
+        }
     </script>
+
+    <!-- Botón para desplegar/ocultar el chatbox -->
+    <button id="chatbox-button" onclick="toggleChatbox()">💬</button>
 
     <!-- Chatbox Botsonic -->
     <div id="chatbox">
