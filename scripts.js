@@ -4,18 +4,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const chatMessages = document.getElementById('chat-messages');
     
     const apiUrl = 'https://api-azure.botsonic.ai/v1/botsonic/generate';
-    const apiKey = 'tu-clave-api-aqui';  // Reemplaza con tu clave API de Botsonic
+    const apiKey = '1b2366a2-ed9f-44f4-a3ac-880fe5d65127';
     
     sendButton.addEventListener('click', async function() {
         const message = messageInput.value.trim();
         if (message) {
-            appendMessage('You', message);  // Mostrar el mensaje del usuario
+            appendMessage('Tú', message);
             messageInput.value = '';
-            chatMessages.scrollTop = chatMessages.scrollHeight; // Desplazar hacia abajo
+            chatMessages.scrollTop = chatMessages.scrollHeight;
 
-            // Enviar el mensaje al bot
             const response = await getBotResponse(message);
-            appendMessage('Bot', response);  // Mostrar la respuesta del bot
+            appendMessage('Sabon Digital', response);
         }
     });
     
@@ -38,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${apiKey}`  // Usar el encabezado de autorización si es necesario
+                    'Authorization': `Bearer ${apiKey}`
                 },
                 body: JSON.stringify({ message: message })
             });
@@ -48,11 +47,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             const data = await response.json();
-            return data.response;  // Ajusta esto según el formato de la respuesta de la API
+            return data.response; // Ajusta esto según el formato de la respuesta de la API
         } catch (error) {
             console.error('Error:', error);
             return 'Lo siento, hubo un error al procesar tu solicitud.';
         }
     }
 });
-
