@@ -76,6 +76,26 @@
             }
         }
     </style>
+    <!-- Script para el chatbox de Botsonic -->
+    <script>
+      (function (w, d, s, o, f, js, fjs) {
+        w["botsonic_widget"] = o;
+        w[o] =
+          w[o] ||
+          function () {
+            (w[o].q = w[o].q || []).push(arguments);
+          };
+        (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+        js.id = o;
+        js.src = f;
+        js.async = 1;
+        fjs.parentNode.insertBefore(js, fjs);
+      })(window, document, "script", "Botsonic", "https://widget.botsonic.com/CDN/botsonic.min.js");
+      Botsonic("init", {
+        serviceBaseUrl: "https://api-azure.botsonic.ai",
+        token: "dcc6dc56-a2c7-41dc-976d-8e9a6f3cb572",
+      });
+    </script>
 </head>
 <body>
     <header>
@@ -83,12 +103,6 @@
     </header>
 
     <div class="container">
-        <section id="chatbox">
-            <iframe style="height:100vh;width:100vw" frameBorder="0" 
-            src="https://widget.botsonic.com/CDN/index.html?service-base-url=https%3A%2F%2Fapi-azure.botsonic.ai&token=dcc6dc56-a2c7-41dc-976d-8e9a6f3cb572&base-origin=https%3A%2F%2Fbot.writesonic.com&instance-name=Botsonic&standalone=true&page-url=https%3A%2F%2Fchojunqa.github.io%2FIndex.html">
-            </iframe>
-        </section>
-
         <section id="teoria-en-audio">
             <h2>Teoría en Audio</h2>
             <p>Aquí puedes encontrar archivos PDF con la teoría en audio:</p>
