@@ -66,6 +66,21 @@
         .hidden {
             display: none;
         }
+
+        /* Estilo para el chatbox */
+        #chatbox {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            border: 2px solid #ff0000;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
     </style>
     <!-- Script para el chatbox de Botsonic -->
     <script>
@@ -142,6 +157,11 @@
             document.getElementById(sectionId).classList.remove('hidden');
         }
     </script>
+
+    <!-- Chatbox Botsonic -->
+    <div id="chatbox">
+        <iframe src="https://widget.botsonic.com/CDN/index.html?service-base-url=https%3A%2F%2Fapi-azure.botsonic.ai&token=dcc6dc56-a2c7-41dc-976d-8e9a6f3cb572&base-origin=https%3A%2F%2Fbot.writesonic.com&instance-name=Botsonic&standalone=true&page-url=https%3A%2F%2Fchojunqa.github.io%2FIndex.html" frameborder="0"></iframe>
+    </div>
 
 </body>
 </html>
