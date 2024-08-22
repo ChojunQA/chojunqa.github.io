@@ -1,0 +1,86 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFAF0; /* Fondo blanco roto */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #E94E77; /* Rojo */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Main Content */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); /* Ajustar altura para el header */
+}
+
+/* Chatbox Styles */
+#chatbox {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.chat-container {
+    border: 2px solid #FF6F00; /* Naranja */
+    border-radius: 10px;
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+}
+
+.chat-header {
+    background-color: #FF6F00; /* Naranja */
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 10px;
+    border-top: 2px solid #FF6F00; /* Naranja */
+    overflow-y: auto;
+}
+
+.chat-input {
+    display: flex;
+    border-top: 2px solid #FF6F00; /* Naranja */
+    padding: 10px;
+}
+
+#message-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #FF6F00; /* Naranja */
+    border-radius: 5px;
+}
+
+#send-button {
+    background-color: #FFD700; /* Amarillo */
+    border: none;
+    color: white;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#send-button:hover {
+    background-color: #FFC107; /* Amarillo más claro */
+}
