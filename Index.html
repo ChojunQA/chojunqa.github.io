@@ -1,89 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pregutale a Sabon Digital</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        .chat-container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .chat-box {
-            max-height: 300px;
-            overflow-y: auto;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-        .input-group {
-            display: flex;
-        }
-        textarea {
-            flex: 1;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-        }
-        button {
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-            background-color: #007bff;
-            color: #fff;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Sabon Digital</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="chat-container">
-        <h1>Sabon digital responde</h1>
-        <div class="chat-box" id="chat-box"></div>
-        <div class="input-group">
-            <textarea id="message" rows="3" placeholder="Escribe tu mensaje..."></textarea>
-            <button id="send">Enviar</button>
-        </div>
-    </div>
-    <script>
-        document.getElementById('send').addEventListener('click', function() {
-            const message = document.getElementById('message').value;
-            const chatBox = document.getElementById('chat-box');
+    <header>
+        <h1>Sabon Digital 1</h1>
+    </header>
+    
+    <main>
+        <section id="chatbox">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <h2>Chat con nosotros</h2>
+                </div>
+                <div class="chat-messages" id="chat-messages">
+                    <!-- Mensajes del chat aparecerán aquí -->
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="message-input" placeholder="Escribe tu mensaje...">
+                    <button id="send-button">Enviar</button>
+                </div>
+            </div>
+        </section>
+    </main>
 
-            if (message.trim() === '') return;
-
-            chatBox.innerHTML += `<div><strong>Usuario:</strong> ${message}</div>`;
-
-            fetch('http://localhost:5000/chat', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ message: message })
-            })
-            .then(response => response.json())
-            .then(data => {
-                chatBox.innerHTML += `<div><strong>ChatGPT:</strong> ${data.response}</div>`;
-                document.getElementById('message').value = '';
-                chatBox.scrollTop = chatBox.scrollHeight;
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        });
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
