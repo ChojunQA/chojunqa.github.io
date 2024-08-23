@@ -33,7 +33,7 @@
         /* Estilo para el encabezado */
         header {
             text-align: center; /* Centra el texto en el encabezado */
-            padding: 50px 0; /* Espacio arriba y abajo en el encabezado */
+            padding: 20px 0; /* Espacio arriba y abajo en el encabezado */
             background: linear-gradient(90deg, #ff0000, #ff7f00, #ffcc00); /* Gradiente de colores para el fondo del encabezado */
             color: #111; /* Color del texto en el encabezado */
             position: relative; /* Necesario para posicionar el logo absoluto */
@@ -41,17 +41,17 @@
 
         /* Estilo para el título en el encabezado */
         header h1 {
-            font-size: 3rem; /* Tamaño grande para el título */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto para mejor legibilidad */
+            font-size: 2rem; /* Tamaño grande para el título */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra del texto para mejor legibilidad */
         }
 
         /* Estilo para el logo en el encabezado */
         header .logo {
             position: absolute; /* Posiciona el logo en relación con el encabezado */
             top: 50%; /* Centra verticalmente */
-            left: 100px; /* Posiciona el logo a la izquierda */
+            left: 10px; /* Posiciona el logo a la izquierda */
             transform: translateY(-50%); /* Ajusta el logo para que quede centrado verticalmente */
-            height: 150px; /* Ajusta la altura del logo */
+            height: 100px; /* Ajusta la altura del logo */
         }
 
         /* Estilo para el contenedor de las secciones */
@@ -65,6 +65,14 @@
             border-bottom: 2px solid #ff7f00; /* Línea inferior naranja */
             padding-bottom: 10px; /* Espacio debajo del título */
             margin-bottom: 20px; /* Espacio debajo de la sección */
+        }
+
+        /* Estilo para la imagen en la sección de inicio */
+        #home img {
+            max-width: 100%; /* Ajusta la imagen al ancho del contenedor */
+            height: auto; /* Mantiene la proporción de la imagen */
+            border-radius: 10px; /* Bordes redondeados */
+            margin-top: 20px; /* Espacio superior para separar de los elementos anteriores */
         }
 
         /* Estilo para el iframe de la sección de Teoría en Audio */
@@ -144,6 +152,8 @@
         <section id="home">
             <h2 class="section-title">Bienvenido a Taekwondo Digital</h2>
             <p>Explora nuestra plataforma para mejorar tus conocimientos en Taekwondo.</p>
+            <!-- Imagen en la sección de inicio -->
+            <img src="home-image.jpg" alt="Imagen de inicio" class="img-fluid"> <!-- Asegúrate de reemplazar "home-image.jpg" con la URL correcta de tu imagen -->
         </section>
 
         <!-- Sección de teoría en audio -->
